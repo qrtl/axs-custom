@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_product_pcb_form" model="ir.ui.view">
+        <field name="name">product.pcb.form</field>
+        <field name="model">product.pcb</field>
+        <field name="arch" type="xml">
+            <form string="PCB Structure">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="pcb_line_ids">
+                            <tree string="PCB Lines" editable="bottom">
+                                <field name="product_id" />
+                                <field name="ratio" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="product_pcb_tree_view" model="ir.ui.view">
+        <field name="name">product.pcb.tree</field>
+        <field name="model">product.pcb</field>
+        <field name="arch" type="xml">
+            <tree string="PCB Structures">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="product_pcb_search_view" model="ir.ui.view">
+        <field name="name">product.pcb.search</field>
+        <field name="model">product.pcb</field>
+        <field name="arch" type="xml">
+            <search string="PCB Structures">
+                <field name="name" />
+            </search>
+        </field>
+    </record>
+    <record id="product_pcb_action" model="ir.actions.act_window">
+        <field name="name">PCB Structures</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.pcb</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="menu_product_pcb"
+        action="product_pcb_action"
+        parent="stock.menu_stock_inventory_control"
+        sequence="100"
+    />
+</odoo>

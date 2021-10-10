@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='id']" position="after">
+                <field name="pcb_id"/>
+                <field name="pcb_qty" attrs="{'invisible':[('pcb_id','=',False)]}"/>
+                <button name="action_add_pcb_components" string="Add PCB Components" type="object" class="oe_highlight" attrs="{'invisible': ['|','|',('pcb_id','=',False),('pcb_qty','=',0.0),('state','!=','draft')]}" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

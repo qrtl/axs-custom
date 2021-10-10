@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_pcb_user,access.product.pcb.user,model_product_pcb,base.group_user,1,0,0,0
+access_product_pcb_stock_manager,access.product.pcb.stock.manager,model_product_pcb,stock.group_stock_manager,1,1,1,1
+access_product_pcb_line_user,access.product.pcb.line.user,model_product_pcb_line,base.group_user,1,0,0,0
+access_product_pcb_line_stock_manager,access.product.pcb.line.stock.manager,model_product_pcb_line,stock.group_stock_manager,1,1,1,1
